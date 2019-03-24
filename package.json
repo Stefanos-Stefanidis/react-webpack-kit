@@ -23,13 +23,10 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.5",
-<<<<<<< HEAD
     "css-loader": "^2.1.1",
-    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-=======
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-react-app": "^3.0.8",
@@ -40,7 +37,6 @@
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.16.4",
->>>>>>> eslintPrettier
     "webpack-dev-server": "^3.2.1"
   }
 }

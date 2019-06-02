@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './../scss/style.scss';
 import './../css/style.css';
 import axios from 'axios';
-
+import StepWizard from 'react-step-wizard';
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
+import Container from 'react-bootstrap/Container';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,13 +24,24 @@ class App extends Component {
         this.setState({
           dataSource: response.data.data,
           isLoading: false,
+          form: {},
         });
       })
       .catch(function (error) {
         console.log(error);
       });
   }
+  updateForm = (key, value) => {
+    const { form } = this.state;
+    console.log(this.state);
+    form[key] = value;
+    this.setState({ form });
+  }
 
+  onStepChange = (stats) => {
+
+    console.log(stats);
+  }
   render() {
     if (this.state.isLoading) {
       return  <h1>LOADING</h1>
@@ -33,7 +49,13 @@ class App extends Component {
 
     return (
       <div>
-        <h1>hey there! </h1>
+        <Container>
+          <StepWizard  onStepChange={this.onStepChange}>
+            <Step1 hashKey={'FirstStep'} update={this.updateForm} />
+            <Step2 />
+            <Step3 />
+          </StepWizard>
+        </Container>
       </div>
     );
   }

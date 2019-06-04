@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import FileSaver from 'file-saver';
+import Button from '@material-ui/core/Button';
 
 export class Step3 extends Component {
 
@@ -14,24 +14,20 @@ export class Step3 extends Component {
     }
 
     fileSaveChanges(){
-        let jsonFile = []; 
-        jsonFile.push(document.getElementById('green').innerHTML);
-        jsonFile.push(document.getElementById('yellow').innerHTML);
-        jsonFile.push(document.getElementById('red').innerHTML);
+        let jsonFile = {}; 
+        jsonFile[0] = document.getElementById('green').innerHTML;
+        jsonFile[1] = document.getElementById('yellow').innerHTML;
+        jsonFile[2] = document.getElementById('red').innerHTML;
         var jsonString = JSON.stringify(jsonFile);
 
         var blob = new Blob([jsonString], {type: "text/plain;charset=utf-8"});
         FileSaver.saveAs(blob, `changes for test.json`);
     }
-    update2 = () => {
-        console.log(this.state.lightsArr);
-        console.log('test');
-    }
+
     render() {
         return (
             <div>
                 <h2>Step {this.props.currentStep}</h2>
-                <input type="number" onChange={this.update2}/>
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
@@ -51,9 +47,9 @@ export class Step3 extends Component {
                     </tbody>
                 </Table>                
                 <div className="text-center">
-                    <Button variant="dark" onClick={this.props.previousStep}>Previous Step</Button>
-                    <Button variant="primary" onClick={this.props.nextStep}>Next Step</Button>
-                    <Button variant="success" onClick={() =>{this.fileSaveChanges('something')}}>Save</Button>
+                    <Button variant="contained" color="primary" onClick={this.props.previousStep}>Previous Step</Button>
+                    <Button variant="contained" color="secondary" onClick={this.props.nextStep}>Next Step</Button>
+                    <Button vvariant="outlined" href="#outlined-buttons" onClick={() =>{this.fileSaveChanges('something')}}>Save</Button>
                 </div>                
             </div>
         )

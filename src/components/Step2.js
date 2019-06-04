@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import Button from 'react-bootstrap/Button';
+import Button from '@material-ui/core/Button';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -55,8 +55,8 @@ export class Step2 extends Component {
                 <h1>Number Of lights <span id="lights"></span></h1>
                 {this.createRange()}
                 <div className="text-center">
-                    <Button variant="dark" onClick={this.props.previousStep}>Previous Step</Button>
-                    <Button variant="primary" onClick={this.props.nextStep}>Next Step</Button>
+                    <Button variant="contained" color="primary" onClick={this.props.previousStep}>Previous Step</Button>
+                    <Button variant="contained" color="secondary" onClick={this.props.nextStep}>Next Step</Button>
                 </div>                       
             </div>
         )

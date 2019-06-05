@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import './../scss/style.scss';
 import './../css/style.css';
@@ -8,13 +7,13 @@ import StepWizard from 'react-step-wizard';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
-import PropTypes from 'prop-types';
 import { createMuiTheme, withStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Navigator from './Navigator';
 import Header from './Header';
+import Container from '@material-ui/core/Container';
 
 let theme = createMuiTheme({
   typography: {
@@ -148,8 +147,13 @@ const styles = {
   mainContent: {
     flex: 1,
     padding: '48px 36px 0',
-    background: '#eaeff1',
+    background: '#eee',
   },
+  container:{
+    backgroundColor: '#fff',
+    paddingTop: 10,
+    paddingBottom: 10,
+  }
 };
 
 class App extends Component {
@@ -219,11 +223,13 @@ class App extends Component {
           <div className={classes.appContent}>
             <Header onDrawerToggle={this.handleDrawerToggle} />
             <main className={classes.mainContent}>
+            <Container fixed className={classes.container}>
             <StepWizard  onStepChange={this.onStepChange}>
               <Step1 hashKey={'FirstStep'} update={this.updateForm} />
               <Step2 />
               <Step3 />
             </StepWizard>
+            </Container>
             </main>
           </div>
         </div>

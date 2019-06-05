@@ -54,7 +54,7 @@ export class Step2 extends Component {
                 <p>Total Steps: {this.props.totalSteps}</p>
                 <h1>Number Of lights <span id="lights"></span></h1>
                 {this.createRange()}
-                <div className="text-center">
+                <div className="text-right">
                     <Button variant="contained" color="primary" onClick={this.props.previousStep}>Previous Step</Button>
                     <Button variant="contained" color="secondary" onClick={this.props.nextStep}>Next Step</Button>
                 </div>                       

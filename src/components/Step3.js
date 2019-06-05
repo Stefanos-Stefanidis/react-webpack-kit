@@ -46,7 +46,7 @@ export class Step3 extends Component {
                         </tr>
                     </tbody>
                 </Table>                
-                <div className="text-center">
+                <div className="text-right">
                     <Button variant="contained" color="primary" onClick={this.props.previousStep}>Previous Step</Button>
                     <Button variant="contained" color="secondary" onClick={this.props.nextStep}>Next Step</Button>
                     <Button vvariant="outlined" href="#outlined-buttons" onClick={() =>{this.fileSaveChanges('something')}}>Save</Button>

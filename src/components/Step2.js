@@ -35,7 +35,7 @@ export class Step2 extends Component {
         }
         console.log('numOfLights:', numOfLights)
         // Outer loop to create parent
-        for (let i = 0; i < numOfLights; i++) {
+        for (let i = 0; i < 1; i++) {
 
           table.push(<Range key={i} pushable defaultValue={[40,70,100]} count={3} onChange={this.change}
             trackStyle={[{ backgroundColor: 'yellow' }, { backgroundColor: 'red' }]}
